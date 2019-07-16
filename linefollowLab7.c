@@ -15,6 +15,7 @@
 #define RIGHT_STOP (uns16)3395
 #define LEFT_MAX (uns16)2875
 #define RIGHT_MAX (uns16)3875
+#define DELAY_LENGTH (uns16)160
 
 //3395 (stop) to 3875 max speed right
 void rightOn() {
@@ -23,7 +24,7 @@ void rightOn() {
   for(int i = 0; i<25; i++) {
     stopToStart += rightMotorIncrement;
     SetRight(stopToStart);
-    LongDelay(160);
+    LongDelay(DELAY_LENGTH);
   }
   //Value is at 3870 ticks, set to max
   SetRight(RIGHT_MAX);
@@ -36,7 +37,7 @@ void leftOn() {
   for(int i = 0; i < 25; i++) {
     stopToStart -= leftMotorIncrement;
     SetLeft(stopToStart);
-    LongDelay(160);
+    LongDelay(DELAY_LENGTH);
   }
   //Value is now at 2887 ticks, set to max
   SetLeft(LEFT_MAX);
@@ -49,7 +50,7 @@ void rightOff() {
   for(int i = 0; i < 25; i++) {
     maxToStop -= rightMotorIncrement;
     SetRight(maxToStop);
-    LongDelay(160);
+    LongDelay(DELAY_LENGTH);
   }
   //Value is at 3400, set to stop
   SetRight(RIGHT_STOP);
@@ -63,7 +64,7 @@ void leftOff() {
   for(int i = 0; i<25; i++) {
     maxToStop += leftMotorIncrement;
     SetLeft(maxToStop);
-    LongDelay(160);
+    LongDelay(DELAY_LENGTH);
   }
   //Value is at 3500 at this point, set to stop
   SetLeft(LEFT_STOP);
@@ -82,7 +83,7 @@ void leftOffRightOn() {
     maxToStop += leftMotorIncrement;
     SetRight(stopToStart);
     SetLeft(maxToStop);
-    LongDelay(160);
+    LongDelay(DELAY_LENGTH);
   }
   //Value is at 3870 ticks, set to max
   SetRight(RIGHT_MAX);
@@ -102,7 +103,7 @@ void leftOnRightOff() {
     stopToStart -= leftMotorIncrement;
     SetRight(maxToStop);
     SetLeft(stopToStart);
-    LongDelay(160);
+    LongDelay(DELAY_LENGTH);
   }
   //Value is at 3400, set to stop
   SetRight(RIGHT_STOP);
@@ -122,7 +123,7 @@ void leftOffRightOff() {
     maxToStopRight -= rightMotorIncrement;
     SetRight(maxToStopRight);
     SetLeft(maxToStopLeft);
-    LongDelay(160);
+    LongDelay(DELAY_LENGTH);
   }
   //Value is at 3400, set to stop
   SetRight(RIGHT_STOP);
@@ -142,7 +143,7 @@ void leftOnRightOn() {
     stopToStartRight += rightMotorIncrement;
     SetLeft(stopToStartLeft);
     SetRight(stopToStartRight);
-    LongDelay(160);
+    LongDelay(DELAY_LENGTH);
   }
   SetRight(RIGHT_MAX);
   SetLeft(LEFT_MAX);
