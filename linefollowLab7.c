@@ -25,8 +25,6 @@
   SetLeft(3188); \
   SetRight(3638);
 
-
-
 void main(void)
 {
 	uns8 stopped = 0;
