@@ -7,23 +7,23 @@
 //
 
 #include "mte220.c" //Must be included, C functions needed for labs
-#include <stdbool.h>
+//#include <stdbool.h>
 
 #define belowZeroGauss 0x7D
 #define aboveZeroGauss 0x82
-#define LEFT_STOP (uns16)3512
-#define RIGHT_STOP (uns16)3395
+
+#define LEFT_STOP (uns16)3500
+#define RIGHT_STOP (uns16)3400
 #define LEFT_MAX (uns16)2875
 #define RIGHT_MAX (uns16)3875
-#define DELAY_LENGTH (uns16)160
 
 #define BothServosQuarterOn \
-  SetLeft(LEFT_STOP - ((LEFT_STOP - LEFT_MAX)/4)); \
-  SetRight(RIGHT_STOP + ((RIGHT_MAX - RIGHT_STOP)/4));
+  SetLeft(3344); \
+  SetRight(3519);
 
 #define BothServosHalfOn \
-  SetLeft(LEFT_STOP - ((LEFT_STOP - LEFT_MAX)/2)); \
-  SetRight(RIGHT_STOP + ((RIGHT_MAX - RIGHT_STOP)/2));
+  SetLeft(3188); \
+  SetRight(3638);
 
 
 
